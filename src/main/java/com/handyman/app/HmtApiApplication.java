@@ -1,15 +1,15 @@
 package com.handyman.app;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories;
 
 @SpringBootApplication
-public class HmtApiApplication implements CommandLineRunner{
+@EnableReactiveMongoRepositories(basePackages = "com.handyman.app.models.dao")
+public class HmtApiApplication implements CommandLineRunner {
 	
 	
 	private static final Logger log = LoggerFactory.getLogger(HmtApiApplication.class);
